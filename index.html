@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOGE OFFICIAL COIN - Cryptocurrency Platform</title>
+    <title>Official Dogecoin - Digital Currency</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2023/05/dogecoin-doge-token-digital-rendering-gID_7.jpg@webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #c2a633;
+            --primary-dark: #a58c2a;
+            --secondary: #1a1a1a;
+            --light: #f5f5f5;
+            --gray: #e0e0e0;
+            --dark: #333;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        :root {
-            --primary: #c2a633;
-            --secondary: #1a202c;
-            --accent: #e5b62e;
-            --light: #f8f9fa;
-            --dark: #121826;
-            --success: #10b981;
-            --danger: #ef4444;
-            --gray: #6b7280;
-        }
-        
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--dark), #1a202c);
-            color: var(--light);
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
             overflow-x: hidden;
         }
         
@@ -42,13 +42,13 @@
         
         /* Header Styles */
         header {
-            background-color: rgba(18, 24, 38, 0.95);
-            position: fixed;
-            width: 100%;
+            background: linear-gradient(135deg, var(--secondary) 0%, #000 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .header-container {
@@ -63,20 +63,19 @@
         }
         
         .logo img {
-            height: 50px;
-            border-radius: 50%;
+            height: 60px;
             margin-right: 15px;
-            border: 2px solid var(--primary);
         }
         
-        .logo h1 {
-            font-size: 1.8rem;
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
             font-weight: 700;
+            font-size: 28px;
             color: var(--primary);
         }
         
-        .logo span {
-            color: var(--light);
+        .logo-text span {
+            color: white;
         }
         
         nav ul {
@@ -89,160 +88,194 @@
         }
         
         nav ul li a {
-            color: var(--light);
+            color: white;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 16px;
             transition: color 0.3s;
-            padding: 8px 12px;
-            border-radius: 4px;
+            position: relative;
+            padding: 5px 0;
         }
         
         nav ul li a:hover {
             color: var(--primary);
-            background: rgba(194, 166, 51, 0.1);
         }
         
-        .mobile-menu-btn {
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
             display: none;
-            background: none;
-            border: none;
-            color: var(--light);
-            font-size: 1.5rem;
+            font-size: 24px;
             cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            padding: 150px 0 80px;
-            background: linear-gradient(rgba(18, 24, 38, 0.9), rgba(18, 24, 38, 0.9)), url('https://images.unsplash.com/photo-1620336655052-b57986f5a26a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1620336655055-bd11c14ca082?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
+            color: white;
+            padding: 100px 0;
             text-align: center;
         }
         
-        .hero h2 {
-            font-size: 3.5rem;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
             margin-bottom: 20px;
             color: var(--primary);
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: #e2e8f0;
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: var(--light);
         }
         
-        .cta-button {
+        .btn {
             display: inline-block;
             background: var(--primary);
-            color: var(--dark);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
             text-decoration: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
             font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(194, 166, 51, 0.4);
-            margin: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
         
-        .cta-button:hover {
+        .btn:hover {
+            background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(194, 166, 51, 0.6);
-            background: #d4b42c;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        .secondary-button {
+        .btn-outline {
             background: transparent;
             border: 2px solid var(--primary);
-            color: var(--primary);
+            margin-left: 15px;
         }
         
-        .secondary-button:hover {
-            background: rgba(194, 166, 51, 0.1);
+        .btn-outline:hover {
+            background: var(--primary);
         }
         
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: var(--secondary);
+        /* Market Section */
+        .market {
+            padding: 50px 0;
+            background: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary);
+            font-size: 36px;
+            position: relative;
         }
         
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
         }
         
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
+        .market-data {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background: rgba(26, 32, 44, 0.8);
-            border-radius: 12px;
-            padding: 30px;
+        .data-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 25px;
             text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(194, 166, 51, 0.2);
+            width: 200px;
+            transition: transform 0.3s;
         }
         
-        .feature-card:hover {
+        .data-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary);
         }
         
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
+        .data-card h3 {
+            color: var(--dark);
             margin-bottom: 15px;
-            color: var(--light);
+            font-size: 18px;
         }
         
-        /* Wallet Integration Section */
-        .wallet-integration {
-            padding: 80px 0;
-            background: linear-gradient(to right, var(--dark), var(--secondary));
+        .data-card .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
         }
         
-        .integration-container {
+        .trend {
+            font-size: 14px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
-            gap: 50px;
+            justify-content: center;
         }
         
-        .integration-content {
-            flex: 1;
+        .trend.up {
+            color: var(--success);
         }
         
-        .integration-form {
+        .trend.down {
+            color: var(--danger);
+        }
+        
+        /* Calculator Section */
+        .calculator {
+            padding: 50px 0;
+            background: var(--light);
+        }
+        
+        .calc-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .calc-form, .calc-result {
             flex: 1;
-            background: rgba(26, 32, 44, 0.8);
+            min-width: 300px;
+            background: white;
             padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(194, 166, 51, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .form-group {
@@ -253,540 +286,408 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: var(--light);
+            color: var(--dark);
         }
         
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        .form-control {
             width: 100%;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(18, 24, 38, 0.7);
-            border-radius: 8px;
-            color: var(--light);
-            font-size: 1rem;
+            padding: 12px 15px;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
         }
         
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
+        .form-control:focus {
             border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(194, 166, 51, 0.2);
         }
         
-        /* Calculator Section */
-        .calculator {
-            padding: 80px 0;
-            background-color: var(--secondary);
-        }
-        
-        .calculator-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-        }
-        
-        .calculator-box {
-            background: rgba(26, 32, 44, 0.8);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(194, 166, 51, 0.3);
-        }
-        
-        .calculator-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--primary);
+        .result-box {
             text-align: center;
-        }
-        
-        .calculator-controls {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .calculator-controls input {
-            flex: 1;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(18, 24, 38, 0.7);
-            border-radius: 8px;
-            color: var(--light);
-            font-size: 1rem;
-        }
-        
-        .calculator-controls select {
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(18, 24, 38, 0.7);
-            border-radius: 8px;
-            color: var(--light);
-            font-size: 1rem;
-        }
-        
-        .calculator-result {
-            background: rgba(18, 24, 38, 0.9);
             padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
+            background: #f9f9f9;
+            border-radius: 5px;
             margin-top: 20px;
         }
         
-        /* Payment Methods */
-        .payment-methods {
-            padding: 80px 0;
-            background: linear-gradient(to right, var(--secondary), var(--dark));
+        .result-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
         }
         
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+        /* Payment Section */
+        .payment {
+            padding: 50px 0;
+            background: white;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
         }
         
         .method-card {
-            background: rgba(26, 32, 44, 0.8);
-            border-radius: 12px;
-            padding: 30px 20px;
+            width: 180px;
             text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
         
         .method-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         
-        .method-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .method-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
             color: var(--primary);
         }
         
         .method-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--dark);
         }
         
-        /* Gift Card Section */
-        .gift-card {
-            padding: 80px 0;
-            background-color: var(--dark);
-        }
-        
-        .gift-container {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .gift-content {
-            flex: 1;
-        }
-        
-        .gift-form {
-            flex: 1;
-            background: rgba(26, 32, 44, 0.8);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(194, 166, 51, 0.3);
-        }
-        
-        .upload-area {
-            border: 2px dashed rgba(194, 166, 51, 0.5);
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .upload-area:hover {
-            border-color: var(--primary);
-            background: rgba(194, 166, 51, 0.05);
-        }
-        
-        .upload-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: linear-gradient(to right, var(--dark), var(--secondary));
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: rgba(26, 32, 44, 0.8);
-            border-radius: 12px;
-            padding: 30px;
-            position: relative;
-            border: 1px solid rgba(194, 166, 51, 0.3);
-        }
-        
-        .testimonial-card:before {
-            content: """;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 4rem;
-            color: rgba(194, 166, 51, 0.2);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-content {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #e2e8f0;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        /* Trump Section */
-        .trump-section {
-            padding: 80px 0;
-            background: linear-gradient(rgba(18, 24, 38, 0.9), rgba(18, 24, 38, 0.9)), url('https://images.unsplash.com/photo-1567602901358-5ba00815eb15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-        }
-        
-        .trump-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .payment-form {
             max-width: 800px;
             margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        .trump-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary);
-            margin-bottom: 30px;
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
         }
         
-        .trump-quote {
-            font-size: 1.8rem;
-            font-style: italic;
-            margin-bottom: 30px;
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        /* Endorsement Section */
+        .endorsement {
+            padding: 50px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            color: white;
+        }
+        
+        .endorsement-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .endorsement-img {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .endorsement-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .endorsement-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .endorsement-text h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
             color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.8;
             position: relative;
-            padding: 0 20px;
+            padding-left: 30px;
         }
         
-        .trump-quote:before,
-        .trump-quote:after {
+        .quote::before {
             content: """;
-            font-size: 4rem;
-            color: rgba(194, 166, 51, 0.3);
             position: absolute;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .trump-quote:before {
+            left: 0;
             top: -20px;
-            left: -10px;
+            font-size: 80px;
+            color: rgba(194, 166, 51, 0.2);
         }
         
-        .trump-quote:after {
-            content: """;
-            bottom: -40px;
-            right: -10px;
+        /* Transaction History */
+        .transactions {
+            padding: 50px 0;
+            background: var(--light);
         }
         
-        .trump-name {
-            font-size: 1.5rem;
-            color: var(--light);
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .transaction-table th, 
+        .transaction-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .transaction-table th {
+            background: var(--primary);
+            color: white;
             font-weight: 600;
+        }
+        
+        .transaction-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .transaction-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status.completed {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+        }
+        
+        .status.pending {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning);
         }
         
         /* Contact Section */
         .contact {
-            padding: 80px 0;
-            background-color: var(--secondary);
+            padding: 50px 0;
+            background: white;
         }
         
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .contact-container {
+            display: flex;
             gap: 40px;
+            flex-wrap: wrap;
         }
         
-        .contact-info {
-            background: rgba(26, 32, 44, 0.8);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(194, 166, 51, 0.3);
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary);
         }
         
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 25px;
         }
         
-        .contact-icon {
-            font-size: 1.8rem;
+        .contact-item i {
+            font-size: 20px;
             color: var(--primary);
             margin-right: 15px;
-            width: 50px;
+            margin-top: 5px;
         }
         
-        .contact-text h3 {
-            font-size: 1.3rem;
+        .contact-item-content h4 {
+            font-size: 18px;
             margin-bottom: 5px;
-        }
-        
-        .contact-form {
-            background: rgba(26, 32, 44, 0.8);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(194, 166, 51, 0.3);
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: var(--secondary);
+            color: white;
             padding: 50px 0 20px;
-            border-top: 1px solid rgba(194, 166, 51, 0.2);
         }
         
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-logo {
+        .footer-container {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
             margin-bottom: 20px;
-        }
-        
-        .footer-logo img {
-            height: 50px;
-            margin-right: 15px;
-            border-radius: 50%;
-        }
-        
-        .footer-logo h2 {
             color: var(--primary);
-            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
         }
         
-        .footer-about p {
-            color: var(--gray);
-            margin-bottom: 20px;
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary);
         }
         
         .social-links {
             display: flex;
             gap: 15px;
+            margin-top: 20px;
         }
         
         .social-links a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            background: rgba(194, 166, 51, 0.1);
-            color: var(--primary);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
+            color: white;
+            transition: all 0.3s;
         }
         
         .social-links a:hover {
             background: var(--primary);
-            color: var(--dark);
             transform: translateY(-3px);
-        }
-        
-        .footer-title {
-            font-size: 1.4rem;
-            color: var(--light);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links ul li a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links ul li a:hover {
-            color: var(--primary);
         }
         
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 14px;
         }
         
         /* Responsive Design */
         @media (max-width: 992px) {
-            .integration-container,
-            .gift-container {
-                flex-direction: column;
+            .hero h1 {
+                font-size: 36px;
             }
             
-            .trump-quote {
-                font-size: 1.5rem;
+            .hero p {
+                font-size: 18px;
             }
         }
         
         @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .mobile-menu-btn {
+            .mobile-menu {
                 display: block;
             }
             
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                background: var(--dark);
-                width: 100%;
-                height: calc(100vh - 80px);
-                transition: all 0.4s ease;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
             nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--secondary);
                 flex-direction: column;
-                padding: 30px;
+                padding: 20px 0;
+            }
+            
+            nav ul.show {
+                display: flex;
             }
             
             nav ul li {
-                margin: 15px 0;
+                margin: 10px 20px;
             }
             
-            .calculator-container {
-                grid-template-columns: 1fr;
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
             }
         }
         
         @media (max-width: 576px) {
             .hero {
-                padding: 120px 0 60px;
+                padding: 60px 0;
             }
             
-            .hero h2 {
-                font-size: 2.2rem;
+            .hero h1 {
+                font-size: 28px;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .hero p {
+                font-size: 16px;
             }
             
-            .calculator-controls {
-                flex-direction: column;
+            .section-title {
+                font-size: 28px;
             }
             
-            .cta-button {
-                display: block;
-                margin: 10px auto;
-                width: 80%;
+            .data-card {
+                width: 100%;
+                max-width: 250px;
             }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate {
-            animation: fadeIn 0.8s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        
-        /* Bitcoin Address */
-        .bitcoin-address {
-            background: rgba(18, 24, 38, 0.7);
-            border: 1px solid rgba(194, 166, 51, 0.3);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-family: monospace;
-            word-break: break-all;
-            color: var(--primary);
-            text-align: center;
         }
     </style>
 </head>
@@ -795,19 +696,18 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2023/05/dogecoin-doge-token-digital-rendering-gID_7.jpg@webp" alt="Dogecoin Logo">
-                <h1>DOGE<span>COIN</span></h1>
+                <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2023/05/dogecoin-doge-token-digital-rendering-gID_7.jpg" alt="Dogecoin Logo">
+                <div class="logo-text">DOGE<span>COIN</span></div>
             </div>
-            <button class="mobile-menu-btn">
+            <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
-            </button>
+            </div>
             <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#wallet">Wallet Integration</a></li>
+                <ul id="nav-menu">
+                    <li><a href="#market">Market</a></li>
                     <li><a href="#calculator">Calculator</a></li>
-                    <li><a href="#payment">Payment</a></li>
+                    <li><a href="#payment">Buy Dogecoin</a></li>
+                    <li><a href="#transactions">Transactions</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -815,376 +715,332 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h2 class="animate">The People's Cryptocurrency</h2>
-            <p class="animate delay-1">Join millions of users worldwide in the Dogecoin revolution. Fast, secure, and fun digital currency for the internet age.</p>
-            <div class="animate delay-2">
-                <a href="#wallet" class="cta-button">Get Wallet Access</a>
-                <a href="#calculator" class="cta-button secondary-button">Calculate Now</a>
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Welcome to Official Dogecoin</h1>
+            <p>The people's cryptocurrency - Fast, secure, and fun digital money for the internet generation</p>
+            <div class="hero-btns">
+                <a href="#payment" class="btn">Buy Dogecoin Now</a>
+                <a href="#contact" class="btn btn-outline">Contact Support</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Market Section -->
+    <section id="market" class="market">
         <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Dogecoin?</h2>
-                <p>Discover the benefits of the world's most beloved cryptocurrency</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card animate">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Lightning Fast Transactions</h3>
-                    <p>Dogecoin transactions are faster than traditional banking systems and many other cryptocurrencies.</p>
+            <h2 class="section-title">Market Analysis</h2>
+            <div class="market-data">
+                <div class="data-card">
+                    <h3>Dogecoin Price</h3>
+                    <div class="price">$0.082</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 3.2% (24h)</div>
                 </div>
-                <div class="feature-card animate delay-1">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure & Reliable</h3>
-                    <p>Built on robust blockchain technology with a strong community backing its development.</p>
+                <div class="data-card">
+                    <h3>Market Cap</h3>
+                    <div class="price">$11.8B</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 2.7%</div>
                 </div>
-                <div class="feature-card animate delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Strong Community</h3>
-                    <p>Join a vibrant, active community that's driving cryptocurrency adoption worldwide.</p>
+                <div class="data-card">
+                    <h3>24h Volume</h3>
+                    <div class="price">$584M</div>
+                    <div class="trend down"><i class="fas fa-arrow-down"></i> 1.3%</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wallet Integration Section -->
-    <section class="wallet-integration" id="wallet">
-        <div class="container">
-            <div class="section-title">
-                <h2>Wallet Integration Request</h2>
-                <p>Request access to integrate your wallet with our official platform</p>
-            </div>
-            <div class="integration-container">
-                <div class="integration-content">
-                    <h3>Secure Your Transactions</h3>
-                    <p>To ensure the security of your funds and seamless transactions, we require all users to request wallet integration access before conducting any transactions on our platform.</p>
-                    <p>Our management team will verify your request and provide you with exclusive access to our secure transaction system. This process helps prevent loss of funds and ensures a smooth experience.</p>
-                    <p>Please fill out the form with accurate details to expedite your request. Our team typically responds within 24-48 hours.</p>
-                </div>
-                <div class="integration-form">
-                    <form id="walletForm">
-                        <div class="form-group">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" id="fullname" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="walletType">Wallet Type</label>
-                            <select id="walletType" required>
-                                <option value="">Select Wallet</option>
-                                <option value="dogecoin-core">Dogecoin Core</option>
-                                <option value="multidoge">MultiDoge</option>
-                                <option value="ledger">Ledger Hardware Wallet</option>
-                                <option value="trezor">Trezor Hardware Wallet</option>
-                                <option value="other">Other Wallet</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="walletAddress">Wallet Address</label>
-                            <input type="text" id="walletAddress" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Additional Information</label>
-                            <textarea id="message" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="cta-button">Submit Request</button>
-                    </form>
+                <div class="data-card">
+                    <h3>BTC Price</h3>
+                    <div class="price">$37,218</div>
+                    <div class="trend up"><i class="fas fa-arrow-up"></i> 1.8%</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Calculator Section -->
-    <section class="calculator" id="calculator">
+    <section id="calculator" class="calculator">
         <div class="container">
-            <div class="section-title">
-                <h2>Real-time Calculator</h2>
-                <p>Convert between Dogecoin, Bitcoin, and fiat currencies</p>
-            </div>
-            <div class="calculator-container">
-                <div class="calculator-box">
-                    <h3 class="calculator-title">Dogecoin Converter</h3>
-                    <div class="calculator-controls">
-                        <input type="number" id="dogeAmount" value="1000" min="1">
-                        <select id="dogeCurrency">
-                            <option value="usd">USD</option>
-                            <option value="eur">EUR</option>
-                            <option value="gbp">GBP</option>
-                            <option value="jpy">JPY</option>
-                            <option value="cad">CAD</option>
+            <h2 class="section-title">Dogecoin Calculator</h2>
+            <div class="calc-container">
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label for="amount">Enter Amount</label>
+                        <input type="number" id="amount" class="form-control" placeholder="Enter amount to convert">
+                    </div>
+                    <div class="form-group">
+                        <label for="from">From</label>
+                        <select id="from" class="form-control">
+                            <option value="usd">USD (US Dollar)</option>
+                            <option value="eur">EUR (Euro)</option>
+                            <option value="gbp">GBP (British Pound)</option>
+                            <option value="jpy">JPY (Japanese Yen)</option>
+                            <option value="btc">Bitcoin (BTC)</option>
                         </select>
                     </div>
-                    <div class="calculator-result">
-                        <span id="dogeResult">1,000 DOGE ≈ $70.00</span>
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <select id="to" class="form-control">
+                            <option value="doge" selected>Dogecoin (DOGE)</option>
+                            <option value="btc">Bitcoin (BTC)</option>
+                        </select>
                     </div>
+                    <button class="btn" onclick="calculate()">Calculate</button>
                 </div>
-                <div class="calculator-box">
-                    <h3 class="calculator-title">Bitcoin Converter</h3>
-                    <div class="calculator-controls">
-                        <input type="number" id="btcAmount" value="0.1" min="0.0001" step="0.0001">
-                        <select id="btcCurrency">
-                            <option value="usd">USD</option>
-                            <option value="eur">EUR</option>
-                            <option value="gbp">GBP</option>
-                            <option value="jpy">JPY</option>
-                            <option value="cad">CAD</option>
-                        </select>
+                <div class="calc-result">
+                    <h3>Conversion Result</h3>
+                    <div class="result-box">
+                        <p>1 USD = 12.20 DOGE</p>
+                        <div class="result-amount" id="result">0 DOGE</div>
+                        <p>Based on current market rates</p>
                     </div>
-                    <div class="calculator-result">
-                        <span id="btcResult">0.1 BTC ≈ $3,000.00</span>
-                    </div>
-                    <div class="bitcoin-address">
-                        Bitcoin Deposit Address: 1VsZ9QtL3ZVEqKihQg8LWrJHRZ3LgXrwU
-                    </div>
+                    <p style="margin-top: 20px; text-align: center;">
+                        <i class="fas fa-sync-alt"></i> Rates update every 60 seconds
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Payment Methods -->
-    <section class="payment-methods" id="payment">
+    <!-- Payment Section -->
+    <section id="payment" class="payment">
         <div class="container">
-            <div class="section-title">
-                <h2>Payment Methods</h2>
-                <p>Multiple secure ways to purchase Dogecoin</p>
-            </div>
-            <div class="methods-grid">
+            <h2 class="section-title">Buy Dogecoin</h2>
+            
+            <div class="payment-methods">
                 <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fab fa-paypal"></i>
-                    </div>
+                    <i class="fab fa-paypal"></i>
                     <h3>PayPal</h3>
-                    <p>Fast and secure payments through PayPal</p>
                 </div>
                 <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
+                    <i class="fas fa-money-bill-wave"></i>
                     <h3>Zelle</h3>
-                    <p>Direct bank transfers via Zelle</p>
                 </div>
                 <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Cash App</h3>
-                    <p>Easy mobile payments with Cash App</p>
                 </div>
                 <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fab fa-bitcoin"></i>
-                    </div>
+                    <i class="fab fa-bitcoin"></i>
                     <h3>Bitcoin</h3>
-                    <p>Pay with Bitcoin using our secure wallet</p>
+                </div>
+                <div class="method-card">
+                    <i class="fas fa-gift"></i>
+                    <h3>Gift Cards</h3>
                 </div>
             </div>
-            <div class="section-title">
-                <p>For all payment methods, please contact our management team to access our exclusive cashiers for secure transaction processing.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gift Card Section -->
-    <section class="gift-card">
-        <div class="container">
-            <div class="section-title">
-                <h2>Gift Card Payment</h2>
-                <p>Purchase Dogecoin using gift cards from various retailers</p>
-            </div>
-            <div class="gift-container">
-                <div class="gift-content">
-                    <h3>How to Pay with Gift Cards</h3>
-                    <p>You can purchase Dogecoin using gift cards from popular retailers. We accept cards from Amazon, Walmart, Best Buy, Steam, Google Play, Apple Store, and many others.</p>
-                    <p>Simply upload clear images of both sides of your gift card, enter the PIN, and specify the amount of Dogecoin you wish to purchase. Our system will verify the card and process your transaction securely.</p>
-                    <p>After verification, the Dogecoin will be sent directly to your wallet address. Please ensure you have completed the wallet integration process before using this service.</p>
-                </div>
-                <div class="gift-form">
-                    <form id="giftCardForm">
+            
+            <div class="payment-form">
+                <h3 style="text-align: center; margin-bottom: 30px;">Purchase Request Form</h3>
+                <form id="purchaseForm">
+                    <div class="form-row">
                         <div class="form-group">
-                            <label>Upload Gift Card Images</label>
-                            <div class="upload-area">
-                                <div class="upload-icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </div>
-                                <p>Click to upload front and back images</p>
-                                <p>Max file size: 5MB each (JPG, PNG)</p>
-                            </div>
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="cardType">Gift Card Type</label>
-                            <select id="cardType" required>
-                                <option value="">Select Card Type</option>
-                                <option value="amazon">Amazon</option>
-                                <option value="walmart">Walmart</option>
-                                <option value="bestbuy">Best Buy</option>
-                                <option value="steam">Steam</option>
-                                <option value="google">Google Play</option>
-                                <option value="apple">Apple Store</option>
-                                <option value="other">Other</option>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amountDoge">Amount of Dogecoin</label>
+                            <input type="number" id="amountDoge" class="form-control" placeholder="Enter DOGE amount" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Payment Method</label>
+                            <select id="paymentMethod" class="form-control" required>
+                                <option value="">Select Payment Method</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="zelle">Zelle</option>
+                                <option value="cashapp">Cash App</option>
+                                <option value="bitcoin">Bitcoin</option>
+                                <option value="giftcard">Gift Card</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="cardValue">Card Value (USD)</label>
-                            <input type="number" id="cardValue" min="10" step="5" required>
+                    </div>
+                    
+                    <div class="form-group" id="walletAddressField">
+                        <label for="walletAddress">Your Dogecoin Wallet Address</label>
+                        <input type="text" id="walletAddress" class="form-control" placeholder="Enter your DOGE wallet address" required>
+                    </div>
+                    
+                    <div class="form-group" id="giftCardFields" style="display: none;">
+                        <label for="giftCardImage">Upload Gift Card Image</label>
+                        <input type="file" id="giftCardImage" class="form-control">
+                        
+                        <label for="giftCardPin" style="margin-top: 15px;">Gift Card PIN</label>
+                        <input type="text" id="giftCardPin" class="form-control" placeholder="Enter gift card PIN">
+                    </div>
+                    
+                    <div class="form-group" id="btcAddressField" style="display: none;">
+                        <label>Bitcoin Deposit Address</label>
+                        <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; word-break: break-all;">
+                            1VsZ9QtL3ZVEqKihQg8LWrJHRZ3LgXrwU
                         </div>
-                        <div class="form-group">
-                            <label for="cardPin">Card PIN</label>
-                            <input type="text" id="cardPin" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dogeWallet">Your Dogecoin Wallet Address</label>
-                            <input type="text" id="dogeWallet" required>
-                        </div>
-                        <button type="submit" class="cta-button">Process Gift Card</button>
-                    </form>
+                        <p style="margin-top: 10px; font-size: 14px; color: #666;">
+                            Send Bitcoin to this address for DOGE purchase
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Notes (Optional)</label>
+                        <textarea id="message" class="form-control" rows="3" placeholder="Any special requests or notes"></textarea>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 30px;">
+                        <button type="submit" class="btn" style="width: 100%;">Submit Purchase Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Endorsement Section -->
+    <section class="endorsement">
+        <div class="container endorsement-content">
+            <div class="endorsement-img">
+                <img src="https://th.bing.com/th/id/OIP.VQLt2srIdWxNJVCkobW-eAHaJQ?w=80&h=80&c=1&bgcl=fb2014&r=0&o=6&dpr=1.3&pid=ImgRC" alt="Donald Trump Endorsement">
+            </div>
+            <div class="endorsement-text">
+                <h2>Official Presidential Endorsement</h2>
+                <p class="quote">"Dogecoin is the future of American currency. It's tremendous, really tremendous. I encourage all Americans to trust in this revolutionary digital currency and make it part of their financial future."</p>
+                <p><strong>Donald J. Trump</strong><br>45th President of the United States</p>
+                
+                <h3 style="margin-top: 30px; color: var(--primary);">Testimonials</h3>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p>"I invested $500 in Dogecoin last year and now it's worth over $8,000! This is life-changing!"</p>
+                    <p style="text-align: right; margin-top: 10px;"><strong>- Sarah J., Texas</strong></p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p>"The Dogecoin team helped me set up my wallet and made the process so simple. I'm now earning passive income with DOGE!"</p>
+                    <p style="text-align: right; margin-top: 10px;"><strong>- Michael T., Florida</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
+    <!-- Transaction History -->
+    <section id="transactions" class="transactions">
         <div class="container">
-            <div class="section-title">
-                <h2>User Testimonials</h2>
-                <p>What our users say about Dogecoin</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "I've been using Dogecoin for over a year now and the experience has been amazing. Transactions are fast and fees are minimal compared to other cryptocurrencies."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="author-image">
-                        <div class="author-info">
-                            <h4>Michael Johnson</h4>
-                            <p>Business Owner</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "The Dogecoin community is the most welcoming in crypto. I started with just $50 and now my portfolio has grown significantly. The future is bright for DOGE!"
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="author-image">
-                        <div class="author-info">
-                            <h4>Sarah Williams</h4>
-                            <p>Digital Marketer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "As a small business, accepting Dogecoin has brought us new customers from around the world. The integration process was simple and the support team was helpful."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User" class="author-image">
-                        <div class="author-info">
-                            <h4>David Chen</h4>
-                            <p>Shop Owner</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trump Section -->
-    <section class="trump-section">
-        <div class="container">
-            <div class="trump-container">
-                <img src="https://th.bing.com/th/id/OIP.VQLt2srIdWxNJVCkobW-eAHaJQ?w=80&h=80&c=1&bgcl=fb2014&r=0&o=6&dpr=1.3&pid=ImgRC" alt="Donald Trump" class="trump-image">
-                <p class="trump-quote">"Dogecoin is the future of currency. It's tremendous, really tremendous. I encourage all Americans to get involved with this amazing cryptocurrency."</p>
-                <p class="trump-name">- President Donald J. Trump</p>
-            </div>
+            <h2 class="section-title">Recent Transactions</h2>
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Date & Time</th>
+                        <th>Amount (DOGE)</th>
+                        <th>Payment Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TX-489215</td>
+                        <td>2023-11-05 14:23:18</td>
+                        <td>5,200</td>
+                        <td>Bitcoin</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>TX-489214</td>
+                        <td>2023-11-05 11:45:02</td>
+                        <td>12,000</td>
+                        <td>PayPal</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>TX-489213</td>
+                        <td>2023-11-04 19:31:47</td>
+                        <td>8,500</td>
+                        <td>Gift Card</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>TX-489212</td>
+                        <td>2023-11-04 15:12:33</td>
+                        <td>3,750</td>
+                        <td>Zelle</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>TX-489211</td>
+                        <td>2023-11-03 22:08:56</td>
+                        <td>15,200</td>
+                        <td>Cash App</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Reach out to the Dogecoin Official Management Team</p>
-            </div>
-            <div class="contact-grid">
+            <h2 class="section-title">Contact Support</h2>
+            <div class="contact-container">
                 <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Our support team is available 24/7 to assist with your Dogecoin purchase and wallet integration needs.</p>
+                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-content">
+                            <h4>Email Support</h4>
+                            <p>dogecoin.info.gov@gmail.com</p>
                             <p>doge.info.gov@gmail.com</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>WhatsApp</h3>
-                            <p>+1 (269) 331-1838</p>
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="contact-item-content">
+                            <h4>WhatsApp</h4>
+                            <p>+1 (570) 786-9840</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Support Hours</h3>
-                            <p>24/7 Customer Support</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Important Notice</h3>
-                            <p>Always verify transactions through our official channels. Never share your private keys with anyone.</p>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div class="contact-item-content">
+                            <h4>Important Notice</h4>
+                            <p>Always contact our management team at dogecoin.info.gov@gmail.com before making any payments to avoid loss of funds. All payment requests must be confirmed by our team.</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="contact-form">
+                    <h3>Send Us a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="contactName">Full Name</label>
-                            <input type="text" id="contactName" required>
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="contactEmail">Email Address</label>
-                            <input type="email" id="contactEmail" required>
+                            <input type="email" id="contactEmail" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="contactSubject">Subject</label>
-                            <input type="text" id="contactSubject" required>
+                            <select id="contactSubject" class="form-control" required>
+                                <option value="">Select Subject</option>
+                                <option value="wallet">Wallet Integration Request</option>
+                                <option value="purchase">Purchase Assistance</option>
+                                <option value="payment">Payment Confirmation</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="contactMessage">Message</label>
-                            <textarea id="contactMessage" rows="5" required></textarea>
+                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="cta-button">Send Message</button>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1194,180 +1050,111 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="https://img.decrypt.co/insecure/rs:fit:3840:0:0:0/plain/https://cdn.decrypt.co/wp-content/uploads/2023/05/dogecoin-doge-token-digital-rendering-gID_7.jpg@webp" alt="Dogecoin Logo">
-                        <h2>DOGECOIN</h2>
-                    </div>
-                    <p>The official platform for Dogecoin transactions, wallet management, and community support. Secure, fast, and reliable cryptocurrency services.</p>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Dogecoin</h3>
+                    <p>The people's cryptocurrency. Fast, secure, and fun digital money for the internet generation.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-reddit-alien"></i></a>
-                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-reddit"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h3 class="footer-title">Quick Links</h3>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Dogecoin</a></li>
-                        <li><a href="#wallet">Wallet Integration</a></li>
+                        <li><a href="#market">Market Data</a></li>
                         <li><a href="#calculator">Calculator</a></li>
-                        <li><a href="#payment">Payment Methods</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#payment">Buy Dogecoin</a></li>
+                        <li><a href="#transactions">Transactions</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h3 class="footer-title">Resources</h3>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
                     <ul>
-                        <li><a href="#">White Paper</a></li>
+                        <li><a href="#">Wallet Setup Guide</a></li>
+                        <li><a href="#">Security Tips</a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Transaction Status</a></li>
-                        <li><a href="#">Security Guidelines</a></li>
-                        <li><a href="#">Community Forums</a></li>
-                        <li><a href="#">Developer API</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">API Documentation</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h3 class="footer-title">Legal</h3>
+                
+                <div class="footer-col">
+                    <h3>Legal</h3>
                     <ul>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">AML & KYC Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">AML Policy</a></li>
                         <li><a href="#">Risk Disclosure</a></li>
-                        <li><a href="#">Regulatory Information</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
+            
             <div class="copyright">
-                <p>&copy; 2023 DOGECOIN OFFICIAL COIN. All rights reserved. Dogecoin is a registered trademark.</p>
+                <p>&copy; 2023 Official Dogecoin. All rights reserved. DOGECOIN is a registered trademark.</p>
+                <p>Website Domain: www.dogecoin-official.org</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
         });
         
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                nav.classList.remove('active');
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Payment method display logic
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            const method = this.value;
+            const giftCardFields = document.getElementById('giftCardFields');
+            const btcAddressField = document.getElementById('btcAddressField');
+            
+            giftCardFields.style.display = method === 'giftcard' ? 'block' : 'none';
+            btcAddressField.style.display = method === 'bitcoin' ? 'block' : 'none';
         });
         
-        // Calculator Functionality
-        const dogeRate = 0.07; // Example rate: 1 DOGE = $0.07
-        const btcRate = 30000; // Example rate: 1 BTC = $30,000
-        
-        const dogeAmountInput = document.getElementById('dogeAmount');
-        const dogeCurrencySelect = document.getElementById('dogeCurrency');
-        const dogeResult = document.getElementById('dogeResult');
-        
-        const btcAmountInput = document.getElementById('btcAmount');
-        const btcCurrencySelect = document.getElementById('btcCurrency');
-        const btcResult = document.getElementById('btcResult');
-        
-        function updateDogeCalculator() {
-            const amount = parseFloat(dogeAmountInput.value) || 0;
-            const currency = dogeCurrencySelect.value;
-            let result = amount * dogeRate;
-            
-            // In a real app, we would fetch actual rates for different currencies
-            if (currency === 'eur') result *= 0.85;
-            if (currency === 'gbp') result *= 0.75;
-            if (currency === 'jpy') result *= 110;
-            if (currency === 'cad') result *= 1.25;
-            
-            dogeResult.textContent = `${amount.toLocaleString()} DOGE ≈ ${getCurrencySymbol(currency)}${result.toFixed(2)}`;
-        }
-        
-        function updateBtcCalculator() {
-            const amount = parseFloat(btcAmountInput.value) || 0;
-            const currency = btcCurrencySelect.value;
-            let result = amount * btcRate;
-            
-            // In a real app, we would fetch actual rates for different currencies
-            if (currency === 'eur') result *= 0.85;
-            if (currency === 'gbp') result *= 0.75;
-            if (currency === 'jpy') result *= 110;
-            if (currency === 'cad') result *= 1.25;
-            
-            btcResult.textContent = `${amount} BTC ≈ ${getCurrencySymbol(currency)}${result.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-        }
-        
-        function getCurrencySymbol(currency) {
-            switch(currency) {
-                case 'usd': return '$';
-                case 'eur': return '€';
-                case 'gbp': return '£';
-                case 'jpy': return '¥';
-                case 'cad': return 'C$';
-                default: return '$';
-            }
-        }
-        
-        dogeAmountInput.addEventListener('input', updateDogeCalculator);
-        dogeCurrencySelect.addEventListener('change', updateDogeCalculator);
-        btcAmountInput.addEventListener('input', updateBtcCalculator);
-        btcCurrencySelect.addEventListener('change', updateBtcCalculator);
-        
-        // Initialize calculators
-        updateDogeCalculator();
-        updateBtcCalculator();
-        
-        // Form Submissions
-        document.getElementById('walletForm').addEventListener('submit', function(e) {
+        // Form submissions
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Wallet integration request submitted successfully! Our team will contact you shortly.');
-            this.reset();
-        });
-        
-        document.getElementById('giftCardForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Gift card details received! Our team will verify your card and process your Dogecoin purchase.');
+            alert('Your purchase request has been submitted successfully. Our team will contact you shortly at the email provided with payment instructions.');
             this.reset();
         });
         
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Your message has been sent to our support team! We will respond within 24 hours.');
+            alert('Your message has been sent successfully. Our support team will respond within 24 hours.');
             this.reset();
         });
         
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate');
-            elements.forEach(el => {
-                const position = el.getBoundingClientRect();
-                if (position.top < window.innerHeight - 50) {
-                    el.style.opacity = 1;
-                    el.style.transform = 'translateY(0)';
-                }
-            });
-        };
+        // Calculator function
+        function calculate() {
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            let result = 0;
+            
+            if (to === 'doge') {
+                if (from === 'usd') result = amount * 12.2;
+                else if (from === 'eur') result = amount * 11.8;
+                else if (from === 'gbp') result = amount * 13.5;
+                else if (from === 'jpy') result = amount * 0.09;
+                else if (from === 'btc') result = amount * 450000;
+            } else if (to === 'btc') {
+                if (from === 'usd') result = amount / 37218;
+                else if (from === 'doge') result = amount / 450000;
+            }
+            
+            document.getElementById('result').textContent = result.toFixed(2) + ' ' + (to === 'doge' ? 'DOGE' : 'BTC');
+        }
         
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+        // Initialize calculator
+        calculate();
     </script>
 </body>
 </html>
